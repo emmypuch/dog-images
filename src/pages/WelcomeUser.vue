@@ -89,6 +89,7 @@ div.btn {
   div.container {
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
   }
 
   div.container-image img {

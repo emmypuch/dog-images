@@ -14,9 +14,8 @@
           of you can enjoy exploring the world together.
         </p>
         <p>
-          Our brand started as a small family business in 2021. Since then we've
-          grown a lot and now know for sure what you and your pup need. So both
-          of you can enjoy exploring the world together.
+          Having said that, we hope you enjoy exploring different types of
+          breeds. We've got the best pups that'd soothe your needs. Enjoy!
         </p>
       </div>
     </div>
