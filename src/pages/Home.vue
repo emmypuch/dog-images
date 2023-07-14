@@ -59,4 +59,24 @@ div.search-bar input {
   color: #3f7270;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  h2,
+  div.search-bar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+  }
+
+  div.search-bar {
+    margin-top: 10px;
+  }
+
+  div.search-bar input {
+    width: 100%;
+    min-width: 30ch;
+    max-width: 25ch;
+  }
+}
 </style>

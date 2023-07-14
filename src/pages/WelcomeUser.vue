@@ -30,24 +30,7 @@ export default {
 };
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  background-color: #f2e6dc;
-  height: 100vh;
-}
-
+<style scoped>
 div.container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -73,7 +56,7 @@ div.container-image_text p {
   color: #3f7270;
   font-size: 1.2rem;
   text-align: justify;
-  line-height: 2.5;
+  line-height: 1.5;
 }
 
 div.btn {
@@ -100,5 +83,29 @@ div.btn {
 
 .custom-button:hover {
   background-color: #bcd869;
+}
+
+@media screen and (max-width: 768px) {
+  div.container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.container-image img {
+    width: 400px;
+  }
+
+  div.container-image_text h1 {
+    font-size: 3rem;
+  }
+
+  div.container-image_text p {
+    margin-top: 8px;
+    font-size: 1.1rem;
+  }
+
+  .custom-button {
+    font-size: 1.2rem;
+  }
 }
 </style>

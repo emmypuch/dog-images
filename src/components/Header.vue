@@ -11,16 +11,30 @@
           <a href="/contact" id="listItems">Contact</a>
         </div>
         <div class="hamburger">
-          <span>menu</span>
+          <span class="line">menu</span>
         </div>
       </div>
     </header>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  mounted() {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".menu-lists");
 
-<style>
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+  },
+};
+</script>
+
+<style scoped>
 header {
   display: flex;
   justify-content: space-between;
@@ -73,5 +87,66 @@ div.navbar .menu-lists {
 
 div.hamburger {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  div.logo a {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    font-size: 1.2rem;
+  }
+
+  div.navbar {
+    padding-top: 4rem;
+  }
+
+  div.navbar .menu-lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-gap: 60px;
+  }
+
+  #listItems {
+    font-size: 1.7rem;
+  }
+
+  .menu-lists.active {
+    left: 0;
+  }
+
+  div.menu-lists {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease 0s, visibility 0.1s ease 0s,
+      background-color 0s ease 0s;
+    height: 110vh;
+  }
+
+  div.hamburger {
+    display: block;
+    position: fixed;
+    top: 17px;
+    right: 20px;
+    z-index: 2;
+    color: #3f7270;
+    font-size: 1rem;
+  }
 }
 </style>

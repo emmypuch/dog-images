@@ -3,13 +3,7 @@
     <Header />
     <div class="wrapper">
       <div class="breed-information">
-        <!-- <h4>About Us</h4> -->
-        <!-- <p>
-          Our brand started as a small family business in 2021. Since then we've
-          grown a lot and now know for sure what you and your pup need. So both
-          of you can enjoy exploring the world together.
-        </p> -->
-        <h3>Enjoy Your Walks Every Day, Rain or Shine</h3>
+        <h3>Enjoy Your Walks Every Day, Rain or Shine 😁</h3>
         <div class="btn">
           <a href="mailto:adesuyiomowunmi@gmail.com">Say Hello 👋</a>
         </div>
@@ -38,28 +32,12 @@ export default {
 };
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f2e6dc;
-  height: 100vh;
-}
-
+<style scoped>
 div.wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
-  padding: 2rem;
 }
-
-/* div.breed-information {
-  padding: 2rem;
-} */
 
 div.image-container {
   display: flex;
@@ -69,14 +47,14 @@ div.image-container {
 }
 
 div.image-container img {
-  width: 600px;
-  /* height: 500px; */
+  width: 650px;
 }
 
 h3 {
   font-size: 2.5rem;
   color: #3f7270;
   text-align: center;
+  margin-top: 2rem;
 }
 
 div.breed-information a {
@@ -90,6 +68,31 @@ div.breed-information a {
   color: #7f9a96;
   line-height: 2.5;
   text-align: center;
-  width: 300px;
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  div.wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.image-container {
+    margin-top: 30px;
+  }
+
+  div.image-container img {
+    width: 400px;
+  }
+
+  h3 {
+    font-size: 2.1rem;
+  }
+
+  div.breed-information a {
+    font-size: 1rem;
+    margin-top: 10px;
+    width: 250px;
+  }
 }
 </style>

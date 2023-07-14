@@ -40,18 +40,7 @@ export default {
 };
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f2e6dc;
-  height: 100vh;
-}
-
+<style scoped>
 div.wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -71,7 +60,7 @@ div.image-container {
 }
 
 div.image-container img {
-  width: 500px;
+  width: 550px;
   height: 500px;
 }
 
@@ -86,5 +75,34 @@ div.breed-information p {
   color: #7f9a96;
   line-height: 2.5;
   text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  div.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem;
+  }
+
+  div.breed-information {
+    padding: 0.8rem;
+  }
+
+  div.image-container {
+    margin-top: 0px;
+  }
+
+  div.image-container img {
+    width: 350px;
+    height: 300px;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  div.breed-information p {
+    font-size: 1.2rem;
+  }
 }
 </style>
