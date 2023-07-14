@@ -32,11 +32,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 div.wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
+  margin-top: 4rem;
 }
 
 div.image-container {
@@ -54,7 +55,8 @@ h3 {
   font-size: 2.5rem;
   color: #3f7270;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-left: 3rem;
 }
 
 div.breed-information a {
@@ -87,12 +89,8 @@ div.breed-information a {
 
   h3 {
     font-size: 2.1rem;
-  }
-
-  div.breed-information a {
-    font-size: 1rem;
-    margin-top: 10px;
-    width: 250px;
+    margin-top: 0rem;
+    margin-left: 0rem;
   }
 }
 </style>

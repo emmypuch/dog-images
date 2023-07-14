@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 div.container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
