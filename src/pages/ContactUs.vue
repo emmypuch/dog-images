@@ -2,29 +2,27 @@
   <div>
     <Header />
     <div class="wrapper">
+      <div class="breed-information">
+        <!-- <h4>About Us</h4> -->
+        <!-- <p>
+          Our brand started as a small family business in 2021. Since then we've
+          grown a lot and now know for sure what you and your pup need. So both
+          of you can enjoy exploring the world together.
+        </p> -->
+        <h3>Enjoy Your Walks Every Day, Rain or Shine</h3>
+        <div class="btn">
+          <a href="mailto:adesuyiomowunmi@gmail.com">Say Hello 👋</a>
+        </div>
+      </div>
       <div class="image-container">
         <img :src="Image" alt="dog image" />
-      </div>
-
-      <div class="breed-information">
-        <h4>About Us</h4>
-        <p>
-          Our brand started as a small family business in 2021. Since then we've
-          grown a lot and now know for sure what you and your pup need. So both
-          of you can enjoy exploring the world together.
-        </p>
-        <p>
-          Our brand started as a small family business in 2021. Since then we've
-          grown a lot and now know for sure what you and your pup need. So both
-          of you can enjoy exploring the world together.
-        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-const Image = require("../assets/images/dog2.png");
+const Image = require("../assets/images/dog3.png");
 
 import Header from "../components/Header.vue";
 
@@ -59,9 +57,9 @@ div.wrapper {
   padding: 2rem;
 }
 
-div.breed-information {
+/* div.breed-information {
   padding: 2rem;
-}
+} */
 
 div.image-container {
   display: flex;
@@ -71,20 +69,27 @@ div.image-container {
 }
 
 div.image-container img {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  /* height: 500px; */
 }
 
-h4 {
+h3 {
   font-size: 2.5rem;
   color: #3f7270;
+  text-align: center;
 }
 
-div.breed-information p {
+div.breed-information a {
+  text-decoration: none;
+  border: 1px solid #3f7270;
+  padding: 10px 30px;
+  border-radius: 100px;
+  background-color: transparent;
   font-size: 1.2rem;
   margin-top: 15px;
   color: #7f9a96;
   line-height: 2.5;
-  text-align: justify;
+  text-align: center;
+  width: 300px;
 }
 </style>

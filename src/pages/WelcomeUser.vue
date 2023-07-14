@@ -27,11 +27,6 @@ export default {
       Image,
     };
   },
-  // methods: {
-  //   goToAboutPage() {
-  //     this.$router.push("/about");
-  //   },
-  // },
 };
 </script>
 

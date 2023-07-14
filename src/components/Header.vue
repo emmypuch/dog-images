@@ -8,7 +8,7 @@
       <div class="navbar">
         <div class="menu-lists">
           <router-link to="/about" id="listItems">About</router-link>
-          <a href="/#contact" id="listItems">Contact</a>
+          <a href="/contact" id="listItems">Contact</a>
         </div>
         <div class="hamburger">
           <span>menu</span>
@@ -24,7 +24,9 @@
 header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding-top: 1rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
 }
 
 div.logo a {

@@ -2,7 +2,6 @@
 <template>
   <div>
     <Header />
-
     <h2>Welcome boss,</h2>
     <div class="search-bar">
       <input
@@ -29,6 +28,7 @@ h2,
 div.search-bar {
   display: flex;
   justify-content: center;
+  margin-top: 4rem;
 }
 
 h2 {
