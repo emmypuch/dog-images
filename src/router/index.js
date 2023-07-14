@@ -3,6 +3,7 @@ import Home from "../pages/Home.vue";
 import WelcomeUser from "../pages/WelcomeUser.vue";
 import AboutUs from "../pages/AboutUs.vue";
 import ContactUs from "../pages/ContactUs.vue";
+import BreedInfo from "../pages/BreedInfo.vue";
 
 const routes = [
   {
@@ -25,6 +26,7 @@ const routes = [
     name: "contact us",
     component: ContactUs,
   },
+  { path: "/breedinfo/:dogUrl", component: BreedInfo, props: true },
 ];
 
 const router = createRouter({

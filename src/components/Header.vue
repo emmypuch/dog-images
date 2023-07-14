@@ -93,7 +93,6 @@ div.hamburger {
   header {
     display: flex;
     flex-direction: column;
-    /* padding: 2rem; */
   }
 
   div.logo a {
