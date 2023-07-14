@@ -99,7 +99,7 @@ div.hamburger {
     position: absolute;
     top: 7px;
     left: 7px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   div.navbar {
@@ -145,7 +145,7 @@ div.hamburger {
     right: 20px;
     z-index: 2;
     color: #3f7270;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 </style>
