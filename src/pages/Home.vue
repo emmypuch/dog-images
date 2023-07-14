@@ -20,7 +20,11 @@
     </div> -->
     <div class="dog-images_container">
       <div class="dog-images">
-        <div v-for="dog in paginatedDogs" :key="dog.url">
+        <div
+          v-for="dog in paginatedDogs"
+          :key="dog.url"
+          class="dog-image-container"
+        >
           <router-link :to="`/breedinfo/${encodeURIComponent(dog.url)}`">
             <v-lazy-image :src="dog.url" alt="dog breed picture" />
           </router-link>
@@ -37,12 +41,12 @@
 </template>
 
 <script>
-import VLazyImage from "v-lazy-image";
 import Header from "../components/Header.vue";
+import VLazyImage from "v-lazy-image";
 import Pagination from "../components/Paginator.vue";
 
 export default {
-  components: { Pagination, Header, "v-lazy-image": VLazyImage },
+  components: { Header, Pagination, "v-lazy-image": VLazyImage },
   mounted() {
     this.$store.dispatch("fetchDogs");
   },

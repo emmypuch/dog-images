@@ -3,7 +3,11 @@
     <Header />
     <div class="wrapper">
       <div class="image-container">
-        <img :src="decodeURIComponent(dogUrl)" alt="dog breed picture" />
+        <img
+          :src="decodeURIComponent(dogUrl)"
+          alt="dog breed picture"
+          :style="imageStyle"
+        />
       </div>
 
       <div class="breed-information">
@@ -17,6 +21,11 @@
         </p>
       </div>
     </div>
+    <div class="overlay">
+      <button @click="applyFilter('e_cartoonify:60')">Cartoonify</button>
+      <button @click="applyFilter('e_grayscale')">Grayscale</button>
+      <button @click="applyFilter('e_sepia')">Sepia</button>
+    </div>
   </div>
 </template>
 
@@ -28,10 +37,49 @@ export default {
     Header,
   },
   props: ["dogUrl"],
+  data() {
+    return {
+      filter: "", // Stores the current filter value
+    };
+  },
+  computed: {
+    decodedDogUrl() {
+      return decodeURIComponent(this.dogUrl);
+    },
+    imageStyle() {
+      return this.filter ? `filter: ${this.filter};` : "";
+    },
+  },
+  methods: {
+    applyFilter(filter) {
+      this.filter = filter;
+    },
+  },
 };
 </script>
 
 <style scoped>
+.overlay {
+  display: flex;
+  /* justify-content: center; */
+  margin-left: 10rem;
+  margin-top: 10px;
+}
+
+.overlay button {
+  margin: 5px;
+  padding: 8px 16px;
+  background-color: #0a3934;
+  color: #d2e4e3;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background-color: #13504a;
+}
 div.wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -89,6 +137,13 @@ div.breed-information p {
   div.breed-information p {
     font-size: 1.2rem;
     padding-bottom: 0.5em;
+  }
+
+  .overlay {
+    display: flex;
+    justify-content: center;
+    margin-left: 0rem;
+    margin-top: 5px;
   }
 }
 </style>
