@@ -84,11 +84,11 @@ div.breed-information a {
   }
 
   div.image-container img {
-    width: 400px;
+    width: 450px;
   }
 
   h3 {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     margin-top: 0rem;
     margin-left: 0rem;
   }
