@@ -22,4 +22,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  background-color: #f2e6dc;
+  height: 100vh;
+}
 </style>
