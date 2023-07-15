@@ -3,21 +3,23 @@
   <div>
     <Header />
     <h2>Welcome boss,</h2>
-    <div class="search-bar">
-      <input
-        v-model="searchQuery"
-        type="text"
-        placeholder="Search for breed..."
-      />
+    <div class="search-container">
+      <div class="search-bar">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search for breed..."
+        />
+      </div>
+      <div class="select-breeds">
+        <select name="" id="custom-select" v-model="selectedBreed">
+          <option value="">All</option>
+          <option v-for="breed in getBreeds" :key="breed" :value="breed">
+            {{ breed }}
+          </option>
+        </select>
+      </div>
     </div>
-    <!-- <div class="select-breeds">
-      <select name="" id="custom-select" v-model="selectedBreed">
-        <option value="">All</option>
-        <option v-for="breed in getBreeds" :key="breed" :value="breed">
-          {{ breed }}
-        </option>
-      </select>
-    </div> -->
     <div class="dog-images_container">
       <div class="dog-images">
         <div
@@ -113,6 +115,12 @@ export default {
 </script>
 
 <style scoped>
+div.search-container {
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+
 h2,
 div.search-bar {
   display: flex;
@@ -133,8 +141,8 @@ div.search-bar input {
   padding: 10px 30px;
   border-radius: 50px;
   width: 100%;
-  min-width: 60ch;
-  max-width: 50ch;
+  min-width: 55ch;
+  max-width: 45ch;
   border: 1px solid #3f7270;
   background: transparent;
   outline: none;
@@ -149,20 +157,24 @@ div.search-bar input {
   font-size: 1rem;
 }
 
+div.select-breeds {
+  margin-top: 20px;
+}
+
 div.select-breeds select {
   outline: none;
-  color: #0a3934;
+  color: #3f7270;
   width: 100%;
-  min-width: 11ch;
+  min-width: 15ch;
   max-width: 20ch;
   margin-left: 10px;
-  border: 1px solid #0a3934;
-  border-radius: 0.25em;
-  padding: 10px 25px;
-  font-size: 0.9rem;
+  border: 1px solid #3f7270;
+  border-radius: 50px;
+  padding: 7px 10px;
+  font-size: 1rem;
   cursor: pointer;
   line-height: 1.1;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 div.dog-images_container .dog-images {
@@ -191,6 +203,13 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  /* div.search-container {
+  display: flex;
+  ;
+  place-content: center;
+  place-items: center;
+} */
+
   h2,
   div.search-bar {
     display: flex;
