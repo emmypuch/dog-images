@@ -3,7 +3,7 @@
   <div id="navLinks">
     <header>
       <div class="logo">
-        <a href="/">woof</a>
+        <a href="/home">woof</a>
       </div>
       <div class="navbar">
         <div class="menu-lists">
