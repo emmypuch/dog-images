@@ -203,19 +203,22 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  /* div.search-container {
-  display: flex;
-  ;
-  place-content: center;
-  place-items: center;
-} */
+  div.search-container {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+  }
 
-  h2,
-  div.search-bar {
+  h2 {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
     margin-left: 1.5rem;
+  }
+
+  div.search-bar {
+    margin-top: 5px;
   }
 
   div.search-bar {

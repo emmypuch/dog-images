@@ -97,7 +97,7 @@ div.btn {
   }
 
   div.container-image_text h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
   div.container-image_text p {
