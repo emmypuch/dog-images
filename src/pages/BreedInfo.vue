@@ -61,7 +61,6 @@ export default {
 <style scoped>
 .overlay {
   display: flex;
-  /* justify-content: center; */
   margin-left: 10rem;
   margin-top: 10px;
 }
@@ -123,6 +122,7 @@ div.breed-information p {
     padding: 0.8rem;
     display: flex;
     flex-direction: column;
+    margin-top: 0.5rem;
   }
 
   div.image-container img {
@@ -144,6 +144,9 @@ div.breed-information p {
     justify-content: center;
     margin-left: 0rem;
     margin-top: 5px;
+  }
+  .overlay {
+    padding-bottom: 7px;
   }
 }
 </style>

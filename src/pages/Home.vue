@@ -171,7 +171,7 @@ div.select-breeds select {
   border: 1px solid #3f7270;
   border-radius: 50px;
   padding: 7px 10px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   line-height: 1.1;
   background-color: transparent;
@@ -214,21 +214,21 @@ img {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
-    margin-left: 1.5rem;
+    margin-left: 2rem;
   }
 
   div.search-bar {
     margin-top: 5px;
   }
 
-  div.search-bar {
-    margin-top: 10px;
-  }
-
   div.search-bar input {
     width: 100%;
     min-width: 30ch;
     max-width: 25ch;
+  }
+
+  div.select-breeds {
+    margin-top: 10px;
   }
 
   div.dog-images_container .dog-images {
