@@ -21,7 +21,7 @@
         </p>
       </div>
     </div>
-    <div class="overlay">
+    <div id="overlay">
       <button @click="applyFilter('e_cartoonify:60')">Cartoonify</button>
       <button @click="applyFilter('e_grayscale')">Grayscale</button>
       <button @click="applyFilter('e_sepia')">Sepia</button>
@@ -31,10 +31,13 @@
 
 <script>
 import Header from "../components/Header.vue";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 export default {
   components: {
     Header,
+    // eslint-disable-next-line vue/no-unused-components
+    Cloudinary,
   },
   props: ["dogUrl"],
   data() {
@@ -59,13 +62,13 @@ export default {
 </script>
 
 <style scoped>
-.overlay {
+#overlay {
   display: flex;
   margin-left: 10rem;
   margin-top: 10px;
 }
 
-.overlay button {
+#overlay button {
   margin: 5px;
   padding: 8px 16px;
   background-color: #0a3934;
@@ -76,7 +79,7 @@ export default {
   cursor: pointer;
 }
 
-.overlay button:hover {
+#overlay button:hover {
   background-color: #13504a;
 }
 div.wrapper {
@@ -139,13 +142,13 @@ div.breed-information p {
     padding-bottom: 0.5em;
   }
 
-  .overlay {
+  #overlay {
     display: flex;
     justify-content: center;
     margin-left: 0rem;
     margin-top: 5px;
   }
-  .overlay {
+  #overlay {
     padding-bottom: 7px;
   }
 }

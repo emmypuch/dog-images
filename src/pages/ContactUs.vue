@@ -8,24 +8,14 @@
           <a href="mailto:adesuyiomowunmi@gmail.com">Say Hello 👋</a>
         </div>
       </div>
-      <!-- <div class="image-container">
-        <img :src="Image" alt="dog image" />
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-const Image = require("../assets/images/dog3.png");
-
 import Header from "../components/Header.vue";
 
 export default {
-  data() {
-    return {
-      Image,
-    };
-  },
   components: {
     Header,
   },

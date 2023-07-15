@@ -136,6 +136,7 @@ div.hamburger {
     transition: opacity 0.3s ease 0s, visibility 0.1s ease 0s,
       background-color 0s ease 0s;
     height: 110vh;
+    z-index: 2;
   }
 
   div.hamburger {

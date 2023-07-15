@@ -18,13 +18,6 @@ export default {
 </script>
 
 <style>
-/* div.current-page {
-  font-size: 0.8rem;
-  color: #124a44;
-  text-align: center;
-  margin-top: 20px;
-} */
-
 div.btn {
   display: flex;
   justify-content: center;

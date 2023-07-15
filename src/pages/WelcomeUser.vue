@@ -101,7 +101,7 @@ div.btn {
   }
 
   div.container-image_text p {
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 1.1rem;
   }
 
