@@ -26,7 +26,11 @@ const routes = [
     name: "contact us",
     component: ContactUs,
   },
-  { path: "/breedinfo/:dogUrl", component: BreedInfo, props: true },
+  {
+    path: "/breedinfo/:dogUrl",
+    component: BreedInfo,
+    props: true,
+  },
 ];
 
 const router = createRouter({
