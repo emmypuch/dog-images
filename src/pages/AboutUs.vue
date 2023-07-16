@@ -84,7 +84,7 @@ div.breed-information p {
   }
 
   div.breed-information {
-    padding: 0.8rem;
+    padding: 1.5rem;
   }
 
   div.image-container {
@@ -101,7 +101,7 @@ div.breed-information p {
   }
 
   div.breed-information p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 </style>

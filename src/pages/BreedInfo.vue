@@ -66,24 +66,27 @@ export default {
 </script>
 
 <style scoped>
-#overlay {
+div#overlay {
   display: flex;
-  margin-left: 10rem;
-  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
-#overlay button {
+div#overlay button {
   margin: 5px;
-  padding: 8px 16px;
+  padding: 10px 16px;
   background-color: #0a3934;
-  color: #d2e4e3;
+  color: #bfd7d6;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   font-weight: bold;
   cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  text-align: center;
 }
 
-#overlay button:hover {
+div#overlay button:hover {
   background-color: #13504a;
 }
 div.wrapper {
@@ -141,19 +144,30 @@ div.breed-information p {
     font-size: 2rem;
   }
 
+  div.breed-information {
+    padding: 1.5rem;
+  }
+
   div.breed-information p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding-bottom: 0.5em;
   }
 
-  #overlay {
+  div#overlay {
     display: flex;
     justify-content: center;
     margin-left: 0rem;
     margin-top: 5px;
   }
-  #overlay {
-    padding-bottom: 7px;
+
+  div#overlay {
+    padding-bottom: 10px;
+  }
+
+  div#overlay button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 }
 </style>

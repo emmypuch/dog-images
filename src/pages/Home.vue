@@ -235,7 +235,7 @@ img {
   text-align: center;
   margin-top: 70px;
   font-size: 1.5rem;
-  color: #3f7270;
+  color: rgb(105, 40, 40);
 }
 
 @media screen and (max-width: 768px) {
