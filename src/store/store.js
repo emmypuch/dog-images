@@ -3,13 +3,13 @@ import { createStore } from "vuex";
 
 const store = createStore({
   state: {
-    // Define your state here
     dogs: [],
     breeds: [],
     loading: false,
+    doesNotExist: null,
   },
+
   mutations: {
-    // Define your mutations here
     GET_ALL_DOGS(state, dogs) {
       state.dogs = dogs;
     },
@@ -19,25 +19,38 @@ const store = createStore({
     GET_DOG_BREEDS(state, breeds) {
       state.breeds = breeds;
     },
+    GET_DOES_NOT_EXIST(state, doesNotExist) {
+      state.doesNotExist = doesNotExist;
+    },
   },
+
   actions: {
     // Define your actions here
-    async fetchDogs({ commit }, breed) {
-      const dogsResponse = await axios.get(
-        `https://dog.ceo/api/breed/${breed}/images`
-      );
-      const dogs = dogsResponse.data.message.map((dog) => {
-        return {
-          breed: dog.split("/")[4],
-          url: dog,
-        };
-      });
-      commit("GET_ALL_DOGS", dogs);
+    async fetchDogs({ commit, state }, breed) {
+      try {
+        const dogsResponse = await axios.get(
+          `https://dog.ceo/api/breed/${breed}/images`
+        );
+        const dogs = dogsResponse.data.message.map((dog) => {
+          return {
+            breed: dog.split("/")[4],
+            url: dog,
+          };
+        });
+        commit("GET_ALL_DOGS", dogs);
+        commit("GET_DOES_NOT_EXIST", null);
 
-      // Extract unique breeds from the dogs list
-      const breeds = [...new Set(dogs.map((dog) => dog.breed))];
-      commit("GET_DOG_BREEDS", breeds);
+        if (!state.breeds.length) {
+          const breeds = [...new Set(dogs.map((dog) => dog.breed))];
+          commit("GET_DOG_BREEDS", breeds);
+        }
+      } catch (error) {
+        if (error.response.data.code) {
+          commit("GET_DOES_NOT_EXIST", "Does not exist");
+        }
+      }
     },
+
     async getDogBreeds({ commit }) {
       const dogBreeds = await axios.get("https://dog.ceo/api/breeds/list/all");
 
@@ -47,6 +60,7 @@ const store = createStore({
       commit("GET_DOG_BREEDS", breedList);
     },
   },
+
   getters: {
     // Define your getters here
   },

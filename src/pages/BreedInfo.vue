@@ -36,8 +36,8 @@ import Header from "../components/Header.vue";
 export default {
   components: {
     Header,
-    // eslint-disable-next-line vue/no-unused-components
   },
+
   props: ["dogUrl"],
   data() {
     return {

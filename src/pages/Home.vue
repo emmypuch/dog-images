@@ -6,7 +6,7 @@
     <div class="search-container">
       <div class="search-bar">
         <input
-          v-model.lazy="searchQuery"
+          v-model="searchQuery"
           type="text"
           placeholder="Search for breed..."
         />
@@ -25,6 +25,9 @@
       </div>
     </div>
     <div class="dog-images_container">
+      <div class="exist" v-if="paginatedDogs.length === 0 || !paginatedDogs">
+        Breed is empty
+      </div>
       <div class="dog-images">
         <div
           v-for="dog in paginatedDogs"
@@ -53,10 +56,12 @@ import Pagination from "../components/Paginator.vue";
 
 export default {
   components: { Header, Pagination, "v-lazy-image": VLazyImage },
+
   mounted() {
     this.$store.dispatch("fetchDogs", this.selectedBreed || "hound");
     this.$store.dispatch("getDogBreeds");
   },
+
   watch: {
     selectedBreed(newBreed) {
       if (newBreed == "") {
@@ -66,13 +71,16 @@ export default {
       }
     },
   },
+
   computed: {
     getDogs() {
       return this.$store.state.dogs;
     },
+
     getBreeds() {
       return this.$store.state.breeds;
     },
+
     paginatedDogs() {
       let filteredDogs = this.getDogs;
 
@@ -83,9 +91,9 @@ export default {
       }
 
       if (this.searchQuery) {
-        // filteredDogs = filteredDogs.filter((dog) =>
-        //   dog.breed.toLowerCase().includes(this.searchQuery.toLowerCase())
-        // );
+        filteredDogs = filteredDogs.filter((dog) =>
+          dog.breed.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
         this.$store.dispatch("fetchDogs", this.searchQuery);
       }
 
@@ -93,6 +101,7 @@ export default {
       const end = start + this.itemsPerPage;
       return filteredDogs.slice(start, end);
     },
+
     totalPages() {
       return Array.from(
         { length: Math.ceil(this.getDogs.length / this.itemsPerPage) },
@@ -100,6 +109,7 @@ export default {
       );
     },
   },
+
   data() {
     return {
       itemsPerPage: 100,
@@ -110,10 +120,12 @@ export default {
       allbreeds: [],
     };
   },
+
   methods: {
     pageChanged(page) {
       this.currentPage = page;
     },
+
     nextPage() {
       if (
         this.currentPage == this.totalPages.length ||
@@ -122,6 +134,7 @@ export default {
         return;
       this.currentPage += 1;
     },
+
     prevPage() {
       if (this.currentPage == 1) return;
       this.currentPage -= 1;
@@ -216,6 +229,13 @@ img {
 
 .v-lazy-image-loaded {
   filter: blur(0);
+}
+
+.exist {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 1.5rem;
+  color: #3f7270;
 }
 
 @media screen and (max-width: 768px) {
