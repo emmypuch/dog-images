@@ -22,9 +22,9 @@ const store = createStore({
   },
   actions: {
     // Define your actions here
-    async fetchDogs({ commit }) {
+    async fetchDogs({ commit }, breed) {
       const dogsResponse = await axios.get(
-        "https://dog.ceo/api/breed/eskimo/images"
+        `https://dog.ceo/api/breed/${breed}/images`
       );
       const dogs = dogsResponse.data.message.map((dog) => {
         return {
@@ -37,6 +37,14 @@ const store = createStore({
       // Extract unique breeds from the dogs list
       const breeds = [...new Set(dogs.map((dog) => dog.breed))];
       commit("GET_DOG_BREEDS", breeds);
+    },
+    async getDogBreeds({ commit }) {
+      const dogBreeds = await axios.get("https://dog.ceo/api/breeds/list/all");
+
+      const breeds = dogBreeds.data.message;
+      const breedList = Object.keys(breeds);
+
+      commit("GET_DOG_BREEDS", breedList);
     },
   },
   getters: {

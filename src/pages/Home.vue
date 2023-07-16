@@ -6,7 +6,7 @@
     <div class="search-container">
       <div class="search-bar">
         <input
-          v-model="searchQuery"
+          v-model.lazy="searchQuery"
           type="text"
           placeholder="Search for breed..."
         />
@@ -14,7 +14,11 @@
       <div class="select-breeds">
         <select name="" id="custom-select" v-model="selectedBreed">
           <option value="">All</option>
-          <option v-for="breed in getBreeds" :key="breed" :value="breed">
+          <option
+            v-for="breed in $store.state.breeds"
+            :key="breed"
+            :value="breed"
+          >
             {{ breed }}
           </option>
         </select>
@@ -50,7 +54,17 @@ import Pagination from "../components/Paginator.vue";
 export default {
   components: { Header, Pagination, "v-lazy-image": VLazyImage },
   mounted() {
-    this.$store.dispatch("fetchDogs");
+    this.$store.dispatch("fetchDogs", this.selectedBreed || "hound");
+    this.$store.dispatch("getDogBreeds");
+  },
+  watch: {
+    selectedBreed(newBreed) {
+      if (newBreed == "") {
+        this.$store.dispatch("fetchDogs", "hound");
+      } else {
+        this.$store.dispatch("fetchDogs", newBreed);
+      }
+    },
   },
   computed: {
     getDogs() {
@@ -69,9 +83,10 @@ export default {
       }
 
       if (this.searchQuery) {
-        filteredDogs = filteredDogs.filter((dog) =>
-          dog.breed.toLowerCase().includes(this.searchQuery.toLowerCase())
-        );
+        // filteredDogs = filteredDogs.filter((dog) =>
+        //   dog.breed.toLowerCase().includes(this.searchQuery.toLowerCase())
+        // );
+        this.$store.dispatch("fetchDogs", this.searchQuery);
       }
 
       const start = (this.currentPage - 1) * this.itemsPerPage;
@@ -92,6 +107,7 @@ export default {
       maxPerPage: 3,
       searchQuery: "",
       selectedBreed: "",
+      allbreeds: [],
     };
   },
   methods: {

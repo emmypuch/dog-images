@@ -7,6 +7,7 @@
           :src="decodeURIComponent(dogUrl)"
           alt="dog breed picture"
           :style="imageStyle"
+          ref="dogImage"
         />
       </div>
 
@@ -22,40 +23,43 @@
       </div>
     </div>
     <div id="overlay">
-      <button @click="applyFilter('e_cartoonify:60')">Cartoonify</button>
-      <button @click="applyFilter('e_grayscale')">Grayscale</button>
-      <button @click="applyFilter('e_sepia')">Sepia</button>
+      <button @click="applyFilter('sepia')">Apply Sepia</button>
+      <button @click="applyFilter('grayscale')">Apply Grayscale</button>
+      <button @click="applyFilter('remove')">Remove Filter</button>
     </div>
   </div>
 </template>
 
 <script>
 import Header from "../components/Header.vue";
-import { Cloudinary } from "@cloudinary/url-gen";
 
 export default {
   components: {
     Header,
     // eslint-disable-next-line vue/no-unused-components
-    Cloudinary,
   },
   props: ["dogUrl"],
   data() {
     return {
-      filter: "", // Stores the current filter value
+      imageStyle: {},
     };
   },
-  computed: {
-    decodedDogUrl() {
-      return decodeURIComponent(this.dogUrl);
-    },
-    imageStyle() {
-      return this.filter ? `filter: ${this.filter};` : "";
-    },
-  },
+
   methods: {
     applyFilter(filter) {
-      this.filter = filter;
+      if (filter === "sepia") {
+        this.imageStyle = {
+          filter: "sepia(100%)",
+        };
+      } else if (filter === "grayscale") {
+        this.imageStyle = {
+          filter: "grayscale(100%)",
+        };
+      } else if (filter === "remove") {
+        this.imageStyle = {
+          filter: "url(#remove)",
+        };
+      }
     },
   },
 };

@@ -28,6 +28,7 @@ const routes = [
   },
   {
     path: "/breedinfo/:dogUrl",
+    name: "BreedInfo",
     component: BreedInfo,
     props: true,
   },
