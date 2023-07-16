@@ -110,11 +110,11 @@ div.hamburger {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-row-gap: 60px;
+    grid-row-gap: 40px;
   }
 
   #listItems {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .menu-lists.active {

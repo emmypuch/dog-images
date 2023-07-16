@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- <div class="current-page">Current page {{ currentPage }}</div> -->
-
     <div class="btn">
       <button @click="prevPage" class="prev-btn">Previous</button>
       <button @click.prevent="nextPage" class="next-btn">Next</button>
@@ -13,7 +11,7 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Pagination",
-  props: ["currentPage", "totalPages", "nextPage", "prevPage"],
+  props: ["totalPages", "nextPage", "prevPage"],
 };
 </script>
 

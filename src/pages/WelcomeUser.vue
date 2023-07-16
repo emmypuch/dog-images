@@ -93,7 +93,7 @@ div.btn {
   }
 
   div.container-image img {
-    width: 400px;
+    width: 350px;
   }
 
   div.container-image_text h1 {
