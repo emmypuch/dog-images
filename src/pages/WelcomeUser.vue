@@ -32,16 +32,21 @@ export default {
 
 <style>
 div.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-content: center;
-  place-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 2rem;
 }
 
 div.container-image img {
-  width: 600px;
+  width: 400px;
   max-width: 100%;
 }
 
@@ -87,20 +92,18 @@ div.btn {
 
 @media screen and (max-width: 768px) {
   div.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   div.container-image img {
-    width: 350px;
+    width: 400px;
   }
 
   div.container-image_text h1 {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 
   div.container-image_text p {
@@ -110,10 +113,6 @@ div.btn {
 
   .custom-button {
     font-size: 1.2rem;
-  }
-
-  div.container-image_text {
-    margin-top: 1.5rem;
   }
 }
 </style>

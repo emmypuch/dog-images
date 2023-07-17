@@ -31,6 +31,14 @@ h3 {
   color: #3f7270;
   margin-top: 8rem;
 }
+
+div.breed-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
 div.breed-information a {
   text-decoration: none;
   border: 1px solid #3f7270;
@@ -47,17 +55,9 @@ div.breed-information a {
 }
 
 @media screen and (max-width: 768px) {
-  div.wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-  }
-
   h3 {
-    font-size: 1.8rem;
-    margin-top: 4rem;
-    margin-left: 0rem;
     text-align: center;
+    font-size: 1.8rem;
   }
 }
 </style>
