@@ -91,13 +91,7 @@ div.btn {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin-top: 1rem;
     position: fixed;
-  }
-
-  div.container-image {
-    margin-top: 10px;
   }
 
   div.container-image img {
