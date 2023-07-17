@@ -114,9 +114,10 @@ div.hamburger {
 
   div.navbar .menu-lists {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-row-gap: 40px;
+    place-content: center;
+    place-items: center;
+    grid-row-gap: 60px;
+    margin-top: 0px;
   }
 
   #listItems {
@@ -136,12 +137,12 @@ div.hamburger {
     border-radius: 10px;
     text-align: center;
     background-color: transparent;
-    backdrop-filter: blur(2.4px);
+    backdrop-filter: blur(2.3px);
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease 0s, visibility 0.1s ease 0s,
       background-color 0s ease 0s;
-    height: 110vh;
+    height: 100vh;
     z-index: 2;
   }
 

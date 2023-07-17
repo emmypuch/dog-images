@@ -93,7 +93,7 @@ div.btn {
     align-items: center;
     min-height: 100vh;
     margin-top: 1rem;
-    position: sticky;
+    position: fixed;
   }
 
   div.container-image {
