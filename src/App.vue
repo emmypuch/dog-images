@@ -45,10 +45,4 @@ body {
 .fade-leave-active {
   transition: opacity 0.5s ease-out;
 }
-
-@media screen and (max-width: 768px) {
-  body {
-    height: 90vh;
-  }
-}
 </style>

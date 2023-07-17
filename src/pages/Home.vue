@@ -10,6 +10,7 @@
           type="text"
           placeholder="Search for breed..."
         />
+        <button id="clear" @click="clearSearch">Clear</button>
       </div>
       <div class="select-breeds">
         <select name="" id="custom-select" v-model="selectedBreed">
@@ -159,8 +160,20 @@ export default {
       this.currentPage -= 1;
     },
 
-    // Save data to local storage
+    handleBreedSelect() {
+      // Clear the search input and selectedBreed when a breed is selected
+      if (!this.selectedBreed) return;
+      this.$store.dispatch("fetchDogs", this.selectedBreed);
+      this.clearSearch();
+      this.saveDataToLocalStorage();
+    },
+    clearSearch() {
+      this.searchQuery = "";
+      this.selectedBreed = "";
+      this.saveDataToLocalStorage(); // Save data to local storage
+    },
 
+    // Save data to local storage
     saveDataToLocalStorage() {
       const data = {
         searchQuery: this.searchQuery,
@@ -174,6 +187,17 @@ export default {
 </script>
 
 <style scoped>
+button#clear {
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 4px;
+  outline: none;
+  border: 1px solid #3f7270;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #3f7270;
+  margin-left: 3px;
+}
 div.search-container {
   display: flex;
   place-content: center;
