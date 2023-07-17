@@ -58,6 +58,15 @@ export default {
   components: { Header, Pagination, "v-lazy-image": VLazyImage },
 
   mounted() {
+    // Retrieve data from local storage on component mount
+    const storedData = localStorage.getItem("componentData");
+    if (storedData) {
+      const data = JSON.parse(storedData);
+      this.searchQuery = data.searchQuery;
+      this.selectedBreed = data.selectedBreed;
+      this.currentPage = data.currentPage;
+    }
+
     this.$store.dispatch("fetchDogs", this.selectedBreed || "hound");
     this.$store.dispatch("getDogBreeds");
   },
@@ -69,6 +78,16 @@ export default {
       } else {
         this.$store.dispatch("fetchDogs", newBreed);
       }
+      // Save data to local storage when selectedBreed changes
+      this.saveDataToLocalStorage();
+    },
+    // eslint-disable-next-line no-unused-vars
+    searchQuery(newQuery) {
+      this.saveDataToLocalStorage();
+    },
+    // eslint-disable-next-line no-unused-vars
+    currentPage(newPage) {
+      this.saveDataToLocalStorage();
     },
   },
 
@@ -138,6 +157,17 @@ export default {
     prevPage() {
       if (this.currentPage == 1) return;
       this.currentPage -= 1;
+    },
+
+    // Save data to local storage
+
+    saveDataToLocalStorage() {
+      const data = {
+        searchQuery: this.searchQuery,
+        selectedBreed: this.selectedBreed,
+        currentPage: this.currentPage,
+      };
+      localStorage.setItem("componentData", JSON.stringify(data));
     },
   },
 };
@@ -269,6 +299,13 @@ img {
 
   div.dog-images_container .dog-images {
     padding: 0rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  img {
+    width: 140px;
+    height: 140px;
   }
 }
 </style>

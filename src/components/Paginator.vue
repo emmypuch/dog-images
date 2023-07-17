@@ -8,10 +8,33 @@
 </template>
 
 <script>
+import { ref, onMounted, watch } from "vue";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Pagination",
   props: ["totalPages", "nextPage", "prevPage"],
+  // eslint-disable-next-line no-unused-vars
+  setup(props) {
+    const currentPage = ref(1);
+
+    // Retrieve the current page from local storage on component mount
+    onMounted(() => {
+      const storedPage = localStorage.getItem("currentPage");
+      if (storedPage) {
+        currentPage.value = parseInt(storedPage);
+      }
+    });
+
+    // Watch for changes in the current page and update the local storage
+    watch(currentPage, (newPage) => {
+      localStorage.setItem("currentPage", newPage.toString());
+    });
+
+    return {
+      currentPage,
+    };
+  },
 };
 </script>
 
