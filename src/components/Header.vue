@@ -11,7 +11,9 @@
           <a href="/contact" id="listItems">Contact</a>
         </div>
         <div class="hamburger">
-          <span class="line">menu</span>
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
         </div>
       </div>
     </header>
@@ -93,6 +95,10 @@ div.hamburger {
   header {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   div.logo a {
@@ -114,7 +120,7 @@ div.hamburger {
   }
 
   #listItems {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .menu-lists.active {
@@ -130,7 +136,7 @@ div.hamburger {
     border-radius: 10px;
     text-align: center;
     background-color: transparent;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2.4px);
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease 0s, visibility 0.1s ease 0s,
@@ -141,12 +147,51 @@ div.hamburger {
 
   div.hamburger {
     display: block;
+    height: 20px;
+    width: 30px;
     position: fixed;
     top: 17px;
     right: 20px;
     z-index: 2;
-    color: #3f7270;
-    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  div.hamburger .line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 10px;
+    background: #3f7270;
+  }
+
+  div.hamburger .line1 {
+    width: 25px;
+  }
+
+  div.hamburger .line2 {
+    width: 35px;
+  }
+
+  div.hamburger .line3 {
+    width: 25px;
+  }
+
+  div.hamburger.active .line2 {
+    transform: translateX(50px);
+    transition: transform 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  div.hamburger.active .line1 {
+    transform: translateY(8px) rotate(45deg);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  div.hamburger.active .line3 {
+    transform: translateY(-8px) rotate(-45deg);
+    transition: transform 0.4s ease-in-out;
   }
 }
 </style>
