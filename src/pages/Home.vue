@@ -3,6 +3,7 @@
   <div>
     <Header />
     <h2>Welcome boss,</h2>
+
     <div class="search-container">
       <div class="search-bar">
         <input
@@ -12,6 +13,7 @@
         />
         <button id="clear" @click="clearSearch">Clear</button>
       </div>
+
       <div class="select-breeds">
         <select name="" id="custom-select" v-model="selectedBreed">
           <option value="">All</option>
@@ -25,10 +27,12 @@
         </select>
       </div>
     </div>
+
     <div class="dog-images_container">
       <div class="exist" v-if="paginatedDogs.length === 0 || !paginatedDogs">
         Breed is empty
       </div>
+
       <div class="dog-images">
         <div
           v-for="dog in paginatedDogs"
@@ -41,6 +45,7 @@
         </div>
       </div>
     </div>
+
     <Pagination
       :totalPages="totalPages"
       :currentPage="currentPage"
@@ -167,6 +172,7 @@ export default {
       this.clearSearch();
       this.saveDataToLocalStorage();
     },
+
     clearSearch() {
       this.searchQuery = "";
       this.selectedBreed = "";
@@ -197,6 +203,7 @@ button#clear {
   font-size: 0.7rem;
   color: #3f7270;
   margin-left: 3px;
+  cursor: pointer;
 }
 div.search-container {
   display: flex;

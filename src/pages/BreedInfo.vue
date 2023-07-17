@@ -22,6 +22,7 @@
         </p>
       </div>
     </div>
+
     <div id="overlay">
       <button @click="applyFilter('sepia')">Apply Sepia</button>
       <button @click="applyFilter('grayscale')">Apply Grayscale</button>
