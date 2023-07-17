@@ -92,6 +92,10 @@ div.btn {
     margin-top: 1rem;
   }
 
+  div.container-image {
+    margin-top: 10px;
+  }
+
   div.container-image img {
     width: 350px;
   }

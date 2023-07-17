@@ -261,8 +261,8 @@ div.select-breeds select {
   outline: none;
   color: #3f7270;
   width: 100%;
-  min-width: 15ch;
-  max-width: 20ch;
+  min-width: 20ch;
+  max-width: 30ch;
   margin-left: 10px;
   border: 1px solid #3f7270;
   border-radius: 50px;
@@ -306,13 +306,6 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  div.search-container {
-    display: flex;
-    flex-direction: column;
-    place-content: center;
-    place-items: center;
-  }
-
   h2 {
     display: flex;
     flex-direction: column;
@@ -322,6 +315,7 @@ img {
 
   div.search-bar {
     margin-top: 5px;
+    margin-left: 35px;
   }
 
   div.search-bar input {
