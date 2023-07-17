@@ -89,7 +89,11 @@ div.btn {
   div.container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin-top: 1rem;
+    position: sticky;
   }
 
   div.container-image {
