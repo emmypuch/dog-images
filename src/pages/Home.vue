@@ -166,17 +166,18 @@ export default {
     },
 
     handleBreedSelect() {
-      // Clear the search input and selectedBreed when a breed is selected
       if (!this.selectedBreed) return;
       this.$store.dispatch("fetchDogs", this.selectedBreed);
       this.clearSearch();
+      // Save data to local storage
       this.saveDataToLocalStorage();
     },
 
     clearSearch() {
       this.searchQuery = "";
       this.selectedBreed = "";
-      this.saveDataToLocalStorage(); // Save data to local storage
+      // Save data to local storage
+      this.saveDataToLocalStorage();
     },
 
     // Save data to local storage
