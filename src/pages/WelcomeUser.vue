@@ -108,5 +108,9 @@ div.btn {
   .custom-button {
     font-size: 1.2rem;
   }
+
+  div.container-image_text {
+    margin-top: 1.5rem;
+  }
 }
 </style>

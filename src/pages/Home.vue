@@ -205,12 +205,14 @@ button#clear {
   color: #3f7270;
   margin-left: 3px;
   cursor: pointer;
+  position: relative;
+  right: 40px;
 }
-div.search-container {
+/* div.search-container {
   display: flex;
   place-content: center;
   place-items: center;
-}
+} */
 
 h2,
 div.search-bar {
@@ -249,7 +251,10 @@ div.search-bar input {
 }
 
 div.select-breeds {
-  margin-top: 20px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.select-breeds select {
@@ -326,7 +331,7 @@ img {
   }
 
   div.select-breeds {
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   div.dog-images_container .dog-images {
