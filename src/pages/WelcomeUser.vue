@@ -99,16 +99,16 @@ div.btn {
   }
 
   div.container-image img {
-    width: 400px;
+    max-width: 80%;
   }
 
   div.container-image_text h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   div.container-image_text p {
     margin-top: 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .custom-button {
